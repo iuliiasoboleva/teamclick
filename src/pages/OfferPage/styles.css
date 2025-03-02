@@ -1,8 +1,10 @@
 .offer-page {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    align-items: center;
+    padding: 20px 20px 100px 20px;
     gap: 15px;
+    position: relative;
 }
 
 .offer-info-block {
@@ -105,42 +107,43 @@
 }
 
 .condition-icon {
-    margin-right: 10px;
-}
-
-/* Чекбокс и кнопка */
-.agreement-section {
-    margin-top: 15px;
+    margin-right: 14px;
 }
 
 .checkbox-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 8px;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    max-width: 280px;
 }
 
-.checkbox-container input {
-    margin-right: 10px;
+.checkbox-container p {
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: 400;
+}
+
+.checkbox-container a {
+    color: #4187FF;
+    text-decoration: underline;
+}
+
+input[type="checkbox"] {
+    display: none;
 }
 
 .confirm-button {
+    gap: 10px;
+    border-radius: 15px;
+    border: 1.5px solid #4187FF;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18.15px;
+    color: #4187FF;
+    padding: 20px;
     width: 100%;
-    padding: 10px;
-    border: none;
-    background: #4187FF;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.confirm-button:disabled {
-    background: gray;
-    cursor: not-allowed;
-}
-
-.confirm-button:hover:not(:disabled) {
-    background: #2365FF;
+    max-width: 280px;
 }
