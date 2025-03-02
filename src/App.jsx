@@ -39,9 +39,9 @@ const AppContent = () => {
 function App() {
   return (
     <Provider store={store}>
-    <Router>
-      <AppContent />
-    </Router>
+      <Router>
+        <AppContent />
+      </Router>
     </Provider>
 
   );

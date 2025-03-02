@@ -1,0 +1,112 @@
+.home-card {
+    display: flex;
+    gap: 28px;
+    border-radius: 25px;
+    padding: 20px;
+    flex-direction: column;
+    background: #FFFFFF;
+}
+
+.home-card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-card-title-block {
+    display: flex;
+    gap: 7px;
+    align-items: flex-end;
+}
+
+.home-card-title-block h3 {
+    font-size: 18px;
+    line-height: 21.78px;
+    font-weight: 600;
+}
+
+.home-card-title-block img {
+    width: 24px;
+    height: 24px;
+}
+
+.home-card-price {
+    position: relative;
+    border-radius: 57px;
+    background: linear-gradient(0deg, #313132, #313132);
+    font-size: 16px;
+    line-height: 19.36px;
+    color: #FFFFFF;
+    font-weight: 500;
+    padding: 6px;
+    overflow: hidden;
+}
+
+.home-card-price::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(112.13deg, rgba(49, 49, 50, 0) 0.96%, #606065 96.74%);
+    border-radius: 57px;
+    z-index: 0;
+}
+
+.home-card-price > * {
+    position: relative;
+    z-index: 1;
+}
+
+.home-card-info-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #F7F7F7;
+    padding-bottom: 12px;
+    align-items: center;
+}
+
+.home-card-info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.home-card-info-label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.36px;
+    color: #737373;    
+}
+
+.home-card-info-value {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.36px;
+    text-align: right;
+}
+
+.home-card-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.home-card-more-button {
+    position: relative;
+    border-radius: 15px;
+    padding: 15px 25px;
+    font-size: 15px;
+    line-height: 18.15px;
+    color: #FFFFFF;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    background: 
+        linear-gradient(0deg, #4187FF, #4187FF),
+        radial-gradient(ellipse 80% 150% at 20% 110%, #2365FF 0%, rgba(35, 101, 255, 0) 100%),
+        radial-gradient(ellipse 80% 150% at 90% -50%, rgba(35, 101, 255, 0.6) 0%, rgba(35, 101, 255, 0) 100%),
+        radial-gradient(ellipse 50% 80% at 35% 40%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+}

@@ -1,0 +1,146 @@
+.offer-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+}
+
+.offer-info-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    border-radius: 30px;
+    background: linear-gradient(245.73deg, #FF4744 -23.95%, #FFFFFF 44.52%);
+    overflow: hidden;
+}
+
+.offer-info-image {
+    flex: 1;
+    max-width: 35%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.offer-details {
+    flex: 1;
+    text-align: left;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.offer-details h2 {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.offer-details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.offer-details-info-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #F7F7F7;
+    padding-bottom: 6px;
+    align-items: center;
+}
+
+.offer-details-info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.offer-details-info-label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;    
+    color: #737373;    
+}
+
+.offer-details-info-value {
+    font-size: 14px;
+    line-height: 16.94px;
+    text-align: right;
+    font-weight: 400;
+}
+
+.offer-conditions {
+    display: flex;
+    gap: 21px;
+    border-radius: 30px;
+    padding: 30px 25px;
+    background: #FFFFFF;
+    flex-direction: column;
+}
+
+.offer-conditions h3 {
+    font-size: 24px;
+    line-height: 29.04px;
+    font-weight: 600;
+}
+
+.offer-conditions ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.offer-conditions li {
+   display: flex;
+   gap: 14px;
+   align-items: flex-start;
+   font-size: 16px;
+   line-height: 20.8px;
+   font-weight: 400;
+}
+
+.condition-icon {
+    margin-right: 10px;
+}
+
+/* Чекбокс и кнопка */
+.agreement-section {
+    margin-top: 15px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+}
+
+.confirm-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #4187FF;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.confirm-button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+.confirm-button:hover:not(:disabled) {
+    background: #2365FF;
+}
