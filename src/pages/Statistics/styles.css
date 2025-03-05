@@ -1,0 +1,71 @@
+.statistics-page {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 50px 20px 20px 20px;
+}
+
+.statistics-main-content {
+    width: 100%;
+}
+
+.statistics-tab-title {
+    font-size: 24px;
+    line-height: 29.04px;
+    font-weight: 600;
+}
+
+.statistics-tab-container {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #E9E9E9;
+    border-radius: 65px;
+    position: relative;
+    width: 100%;
+    padding: 2px;
+}
+
+.statistics-tab-switcher {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: calc(50% - 4px);
+    height: calc(100% - 4px);
+    background: white;
+    border-radius: 65px;
+    transition: left 0.3s ease-in-out;
+    margin: 0 2px;
+}
+
+.statistics-tab-button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+    color: #AAAAAA;
+    font-size: 14px;
+    line-height: 16.94px;
+    font-weight: 500;
+}
+
+.statistics-tab-button.active {
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #313132;
+    font-weight: 500;
+}
+
+.statistics-tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

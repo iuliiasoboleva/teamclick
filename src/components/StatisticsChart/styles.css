@@ -1,0 +1,123 @@
+.statistics-chart {
+    margin-bottom: 20px;  
+    border-radius: 30px;
+    background: #FFFFFF;
+    padding: 15px;   
+}
+
+.statistics-info {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.statistics-info-block {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.statistics-info-image {
+    height: 40px;
+    border-radius: 8px;
+    background: #F7F7F7;
+    border: 1px solid #EAEAEA;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics-info-text-block p {
+    font-size: 12px;
+    line-height: 14.52px;
+    font-weight: 400;
+}
+
+.statistics-info-number-block {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.statistics-info-number-block p {
+    font-size: 14px;
+    line-height: 16.94px;
+    font-weight: 500;
+}
+
+.statistics-info-number-block label.positive {
+    border-radius: 57px;
+    padding: 2px 6px;
+    gap: 5px;
+    background: #EAFFF2;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.52px;
+    color: #31C770;    
+}
+
+.statistics-info-number-block label.negative {
+    padding: 2px 6px;
+    gap: 5px;
+    background: #FFECEC;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.52px;
+    color: #FF5F58;
+    border-radius: 57px;
+}
+
+.custom-tooltip {
+    border-radius: 10px;
+    background: #F7F7F7;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.tooltip-date {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12.1px; 
+    color: #252728;
+    margin-bottom: 2px; 
+}
+
+.tooltip-earnings, .tooltip-sales {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12.1px;
+    display: flex;
+    justify-content: space-between;
+    color: #252728;
+    gap: 20px;
+}
+
+.tooltip-earnings span,
+.tooltip-sales span {
+    font-size: 10px;
+    line-height: 12.1px;
+    color: #31C770;
+    font-weight: 600;
+}
+
+.chart-select-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chart-select {
+    border-radius: 43px;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 2px 4px;
+    margin-bottom: 0;
+    color:#252728;
+    width: auto;
+}
