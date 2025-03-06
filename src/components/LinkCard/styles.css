@@ -79,6 +79,14 @@
     gap: 12px;
 }
 
+.link-card-price-label {
+    padding: 6px 10px;
+    gap: 5px;
+    background: #EAFFF2;
+    color: #31C770;
+    border-radius: 57px;
+}
+
 .link-card-more-button {
     position: relative;
     border-radius: 15px;

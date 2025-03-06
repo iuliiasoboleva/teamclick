@@ -2,12 +2,7 @@ import React from "react";
 import { formatNumber } from "../../helpers";
 import "./styles.css";
 
-const LinkCard = ({ title, icon, labelName, stats, onMoreClick }) => {
-    const statLabels = {
-        clicks: "Клики",
-        income: "Доход",
-    };
-
+const LinkCard = ({ title, icon, labelName, income, stats, onMoreClick, history, createdAt, link }) => {
     return (
         <div className="link-card">
             <div className="link-card-top-row">
@@ -15,27 +10,44 @@ const LinkCard = ({ title, icon, labelName, stats, onMoreClick }) => {
                     <img src={icon} alt={title} />
                     <h3>{title}</h3>
                 </div>
-                <div className="link-card-label">
-                    <p>{labelName}</p>
+                <div className={history ? "link-card-price-label" : "link-card-label"}>
+                    <p>{history ? `${income > 0 ? "+" : ""}${income}₽` : labelName}</p>
                 </div>
             </div>
+
             <div className="link-card-info-block">
-                {Object.entries(stats).map(([key, value]) => (
-                    <div key={key} className="link-card-info-row">
-                        <p className="link-card-info-label">{statLabels[key]}</p>
-                        <p className={`link-card-info-value ${value > 0 ? "positive-value" : ""}`}
-                        >
-                            {key === "income" && value > 0 ? formatNumber(value) + "₽" : value + ""}
-                        </p>
-                    </div>
-                ))}
+                {history ? (
+                    <>
+                        <InfoRow label="Дата" value={createdAt} />
+                        <InfoRow label="Ссылка" value={link} />
+                    </>
+                ) : (
+                    Object.entries(stats).map(([key, value]) => (
+                        <InfoRow
+                            key={key}
+                            label={key === "clicks" ? "Клики" : "Доход"}
+                            value={key === "income" && value > 0 ? `${formatNumber(value)}₽` : value}
+                            isPositive={key === "income" && value > 0}
+                        />
+                    ))
+                )}
             </div>
-            <button className="link-card-more-button" onClick={onMoreClick}>
-                <img src="./icons/link-info.svg" alt="Link info" />
-                <span>Информация о ссылке</span>
-            </button>
+
+            {onMoreClick && (
+                <button className="link-card-more-button" onClick={onMoreClick}>
+                    <img src="./icons/link-info.svg" alt="Link info" />
+                    <span>Информация о ссылке</span>
+                </button>
+            )}
         </div>
     );
 };
+
+const InfoRow = ({ label, value, isPositive = false }) => (
+    <div className="link-card-info-row">
+        <p className="link-card-info-label">{label}</p>
+        <p className={`link-card-info-value ${isPositive ? "positive-value" : ""}`}>{value}</p>
+    </div>
+);
 
 export default LinkCard;

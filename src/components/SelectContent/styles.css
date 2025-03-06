@@ -1,0 +1,38 @@
+.drawer-select-content {
+    margin-top: 20px;
+}
+
+.drawer-select-content-title {
+    font-size: 16px;
+    line-height: 130%;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.drawer-select-content-options {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.drawer-select-content-option {
+    font-size: 16px;
+    line-height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ECECEC;
+    font-weight: 400;
+    padding: 20px 0;
+}
+
+.drawer-select-content-option:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.drawer-select-content-checkmark {
+    height: 10px;
+    width: 10px;
+}
