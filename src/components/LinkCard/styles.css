@@ -1,4 +1,4 @@
-.home-card {
+.link-card {
     display: flex;
     gap: 28px;
     border-radius: 25px;
@@ -7,56 +7,42 @@
     background: #FFFFFF;
 }
 
-.home-card-top-row {
+.link-card-top-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.home-card-title-block {
+.link-card-title-block {
     display: flex;
     gap: 7px;
-    align-items: flex-end;
+    align-items: center;
 }
 
-.home-card-title-block h3 {
+.link-card-title-block h3 {
     font-size: 18px;
     line-height: 21.78px;
     font-weight: 600;
 }
 
-.home-card-title-block img {
-    width: 24px;
-    height: 24px;
+.link-card-title-block img {
+    width: 17px;
+    height: 17px;
 }
 
-.home-card-price {
-    position: relative;
-    border-radius: 57px;
-    background: linear-gradient(0deg, #313132, #313132);
-    font-size: 16px;
-    line-height: 19.36px;
-    color: #FFFFFF;
-    font-weight: 500;
-    padding: 6px;
-    overflow: hidden;
+.link-card-label {
+    border-radius: 58px;
+    padding: 4px 10px;
+    background: #F2F7FF;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    color: #4187FF;
+    gap: 10px;
 }
 
-.home-card-price::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(112.13deg, rgba(49, 49, 50, 0) 0.96%, #606065 96.74%);
-    border-radius: 57px;
-    z-index: 0;
-}
-
-.home-card-price > * {
-    position: relative;
-    z-index: 1;
-}
-
-.home-card-info-row {
+.link-card-info-row {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #F7F7F7;
@@ -64,32 +50,36 @@
     align-items: center;
 }
 
-.home-card-info-row:last-child {
+.link-card-info-row:last-child {
     border-bottom: none;
     padding-bottom: 0;
 }
 
-.home-card-info-label {
+.link-card-info-label {
     font-weight: 400;
     font-size: 16px;
     line-height: 19.36px;
     color: #737373;    
 }
 
-.home-card-info-value {
+.link-card-info-value {
     font-weight: 400;
     font-size: 16px;
     line-height: 19.36px;
     text-align: right;
 }
 
-.home-card-info-block {
+.link-card-info-value.positive-value {
+    color: #31C770;
+}
+
+.link-card-info-block {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.home-card-more-button {
+.link-card-more-button {
     position: relative;
     border-radius: 15px;
     padding: 15px 25px;
@@ -112,7 +102,7 @@
         radial-gradient(ellipse 40% 60% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
 }
 
-.home-card-more-button::before {
+.link-card-more-button::before {
     content: "";
     position: absolute;
     top: 50%;

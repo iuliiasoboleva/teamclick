@@ -1,0 +1,20 @@
+.statistics-links-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.statistics-subtitle {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.statistics-subtitle-text {
+    font-size: 14px;
+    line-height: 100%;
+    color: #AAAAAA;
+    font-weight: 500;
+}

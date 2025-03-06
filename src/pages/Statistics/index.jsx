@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import { formatNumber } from "../../helpers";
 import Drawer from "../../components/Drawer";
 import SuccessPage from "../../components/SuccessPage";
-import StatisticsChart from "../../components/StatisticsChart";
+import StatisticsLinks from "../StatisticsLinks";
 import "./styles.css";
 
 const Statistics = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [isLinkCreated, setIsLinkCreated] = useState(false);
-    const [selectedDay, setSelectedDay] = useState("Ср");
 
     const statisticsTabs = [
         {
             id: "links",
             label: "Ссылки",
-            content: <StatisticsChart selectedDay={selectedDay} setSelectedDay={setSelectedDay} />
+            content: <StatisticsLinks/>
         },
         {
             id: "history",

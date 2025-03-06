@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+} from "recharts";
 import { dataSets } from "../../mockData/chartData";
 import { formatNumber } from "../../helpers";
 import "./styles.css";
@@ -8,7 +10,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
             <div className="custom-tooltip">
-                <p className="tooltip-date">15 февраля 2025</p>
+                <p className="tooltip-date">{label}, 15 февраля 2025</p>
                 <p className="tooltip-earnings">Заработано <span className="positive">{payload[0].value} ₽</span></p>
                 <p className="tooltip-sales">Продажи <span>{payload[0].payload.sales}</span></p>
             </div>
@@ -21,47 +23,41 @@ export default function StatisticsChart({ selectedDay, setSelectedDay }) {
     const [period, setPeriod] = useState("week");
     const data = dataSets[period];
 
-    useEffect(() => {
-        const firstDay = data[0]?.day;
-        if (firstDay) {
-            setSelectedDay(firstDay);
-            setActiveIndex(0);
-        }
-    }, [period]);
-
-    const initialSelectedDay = data[0]?.day || "";
-    const initialIndex = data.findIndex(d => d.day === selectedDay);
-    const [activeIndex, setActiveIndex] = useState(initialIndex);
-    const [tooltipVisible, setTooltipVisible] = useState(false);
     const periodOptions = [
         { value: "week", label: "7 дн" },
-        { value: "month", label: "Мес" },
+        { value: "month", label: "мес" },
         { value: "sixMonths", label: "6 мес" },
-        { value: "year", label: "Год" },
+        { value: "year", label: "год" },
     ];
 
-    const otherOptions = [
-        { value: "all", label: "Все" },
-    ];
+    const otherOptions = [{ value: "all", label: "Все" }];
 
-    const [isSelectOpen, setIsSelectOpen] = useState(false);
-    const selectRef = useRef(null);
+    const [isPeriodSelectOpen, setIsPeriodSelectOpen] = useState(false);
+    const [isOtherSelectOpen, setIsOtherSelectOpen] = useState(false);
+
+    const periodSelectRef = useRef(null);
+    const otherSelectRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (selectRef.current && !selectRef.current.contains(event.target)) {
-                setIsSelectOpen(false);
+            if (
+                periodSelectRef.current && !periodSelectRef.current.contains(event.target) &&
+                otherSelectRef.current && !otherSelectRef.current.contains(event.target)
+            ) {
+                setIsPeriodSelectOpen(false);
+                setIsOtherSelectOpen(false);
             }
         };
 
-        if (isSelectOpen) {
-            document.addEventListener("click", handleClickOutside);
-        } else {
-            document.removeEventListener("click", handleClickOutside);
-        }
-
+        document.addEventListener("click", handleClickOutside);
         return () => document.removeEventListener("click", handleClickOutside);
-    }, [isSelectOpen]);
+    }, []);
+
+    useEffect(() => {
+        if (data.length > 0 && !data.some(d => d.day === selectedDay)) {
+            setSelectedDay(data[0].day);
+        }
+    }, [period, data.length]);
 
     const selectedData = data.find(d => d.day === selectedDay) || { earnings: 0, sales: 0, earningsChangePercent: 0, salesChangePercent: 0 };
 
@@ -101,17 +97,6 @@ export default function StatisticsChart({ selectedDay, setSelectedDay }) {
                 <AreaChart
                     data={data}
                     margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
-                    onMouseMove={(e) => {
-                        if (e && e.activeTooltipIndex !== undefined) {
-                            setActiveIndex(e.activeTooltipIndex);
-                            setSelectedDay(data[e.activeTooltipIndex].day);
-                        }
-                    }}
-                    onMouseEnter={() => setTooltipVisible(true)}
-                    onMouseLeave={() => {
-                        setActiveIndex(0);
-                        setTooltipVisible(true);
-                    }}
                 >
                     <defs>
                         <linearGradient id="colorEarnings" x1="0" y1="0" x2="0" y2="1">
@@ -132,10 +117,12 @@ export default function StatisticsChart({ selectedDay, setSelectedDay }) {
                         interval={0}
                     />
                     <YAxis hide />
+
                     <Tooltip
                         content={<CustomTooltip />}
                         cursor={{ stroke: "black", strokeDasharray: "5 5" }}
-                        wrapperStyle={{ display: tooltipVisible ? "block" : "none" }}
+                        isAnimationActive={false}
+                        trigger="click"
                     />
                     <Area
                         type="monotone"
@@ -147,37 +134,35 @@ export default function StatisticsChart({ selectedDay, setSelectedDay }) {
                     />
                 </AreaChart>
             </ResponsiveContainer>
+
             <div className="chart-select-container">
-                <div className={`custom-select-container chart-select  ${isSelectOpen ? "open" : ""}`} ref={selectRef}>
-                    <div className="custom-select-header" onClick={() => setIsSelectOpen(!isSelectOpen)}>
+                {/* Селект "Все" */}
+                <div className={`chart-select ${isOtherSelectOpen ? "open" : ""}`} ref={otherSelectRef}>
+                    <div className="chart-select-header" onClick={() => setIsOtherSelectOpen(!isOtherSelectOpen)}>
                         <span>{otherOptions.find(p => p.value === "all")?.label}</span>
-                        <img
-                            src={isSelectOpen ? "./icons/select-up.svg" : "./icons/select-down.svg"}
-                            alt="Select arrow"
-                        />
+                        <img src={isOtherSelectOpen ? "./icons/select-up.svg" : "./icons/select-down.svg"} alt="Select arrow" />
                     </div>
-                    {isSelectOpen && (
-                        <ul className="custom-select-options">
+                    {isOtherSelectOpen && (
+                        <ul className="chart-select-options">
                             {otherOptions.map((option) => (
-                                <li key={option.value} onClick={() => { setPeriod(option.value); setIsSelectOpen(false); }}>
+                                <li key={option.value} onClick={() => { setIsOtherSelectOpen(false); }}>
                                     {option.label}
                                 </li>
                             ))}
                         </ul>
                     )}
                 </div>
-                <div className={`custom-select-container chart-select ${isSelectOpen ? "open" : ""}`} ref={selectRef}>
-                    <div className="custom-select-header" onClick={() => setIsSelectOpen(!isSelectOpen)}>
+
+                {/* Селект "Период" */}
+                <div className={`chart-select ${isPeriodSelectOpen ? "open" : ""}`} ref={periodSelectRef}>
+                    <div className="chart-select-header" onClick={() => setIsPeriodSelectOpen(!isPeriodSelectOpen)}>
                         <span>{periodOptions.find(p => p.value === period)?.label}</span>
-                        <img
-                            src={isSelectOpen ? "./icons/select-up.svg" : "./icons/select-down.svg"}
-                            alt="Select arrow"
-                        />
+                        <img src={isPeriodSelectOpen ? "./icons/select-up.svg" : "./icons/select-down.svg"} alt="Select arrow" />
                     </div>
-                    {isSelectOpen && (
-                        <ul className="custom-select-options">
+                    {isPeriodSelectOpen && (
+                        <ul className="chart-select-options">
                             {periodOptions.map((option) => (
-                                <li key={option.value} onClick={() => { setPeriod(option.value); setIsSelectOpen(false); }}>
+                                <li key={option.value} onClick={() => { setPeriod(option.value); setIsPeriodSelectOpen(false); }}>
                                     {option.label}
                                 </li>
                             ))}
