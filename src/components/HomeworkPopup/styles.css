@@ -1,0 +1,63 @@
+.homework-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 15px;
+}
+
+.homework-popup-content {
+    flex-direction: column;
+    border-radius: 25px;
+    gap: 30px;
+    padding: 40px 42px;
+    background: #FFFFFF;
+    display: flex;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    justify-content: center;
+    align-items: center;
+}
+
+.homework-popup-image {
+    width: auto;
+    height: 60px;
+    object-fit: none;
+}
+
+.homework-popup-message {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+}
+
+.homework-popup-message span {
+    font-weight: 400;
+}
+
+.homework-popup-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.homework-popup-cancel-button {
+    gap: 10px;
+    border: 1px solid #BDBDBD;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 100%;
+    color: #BDBDBD;
+    padding: 15px 25px;
+    border-radius: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}

@@ -1,0 +1,96 @@
+.homework-container {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 30px;
+    background: #FFFFFF;
+    box-shadow: 0.45px -15.55px 46.85px 0px rgba(0, 0, 0, 0.04);
+    display: flex;
+}
+
+.homework-title-block {
+    gap: 10px;
+    display: flex;
+}
+
+.homework-title-label {
+    width: 20px;
+    height: auto;
+    background: #FFECEC;
+    border-radius: 30px;   
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.homework-title {
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 600;
+}
+
+.homework-subtitle {
+    font-size: 14px;
+    line-height: 130%;
+    font-weight: 500;
+}
+
+.homework-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.homework-step {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;    
+}
+
+.step-details {
+    list-style: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.step-details li {
+    position: relative;
+    padding-left: 12px;
+}
+
+.step-details li::before {
+    content: "•"; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+.homework-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.homework-buttons button {
+    width: -webkit-fill-available;
+    max-width: 100%;
+}

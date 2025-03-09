@@ -26,6 +26,7 @@
     max-width: 215px;
     width: 100%;
     overflow: hidden;
+    object-fit: none;
 }
 
 .block-popup-text {
