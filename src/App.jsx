@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import Home from "./pages/Home";
 import Statistics from "./pages/Statistics";
 import Training from "./pages/Training";
+import LessonPage from "./pages/LessonPage";
 
 import BottomMenu from "./components/BottomMenu";
 import { store } from "./store/store";
@@ -34,6 +35,8 @@ const AppContent = () => {
         <Route path="/" element={<Home />} />
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/training" element={<Training />} />
+        <Route path="/training/module/:moduleId" element={<Training />} />
+        <Route path="/training/module/:moduleId/lesson/:lessonId" element={<LessonPage />} />
       </Routes>
       {menuItems.length > 0 && <BottomMenu items={menuItems} />}
     </div>

@@ -10,12 +10,12 @@ const HomeworkComponent = ({ homework }) => {
         setPopupType(type);
         setIsPopupOpen(true);
     };
-console.log('isPopupOpen', isPopupOpen)
+
     return (
         <div className="homework-container">
             <div className="homework-title-block">
                 <label className="homework-title-label">
-                    <img src="./icons/homework-icon.svg" alt="Exclamation" />
+                    <img src="/icons/homework-icon.svg" alt="Exclamation" />
                 </label>
                 <h1 className="homework-title">{homework.title}</h1>
             </div>
@@ -42,14 +42,14 @@ console.log('isPopupOpen', isPopupOpen)
                     className="drawer-confirm-button"
                     onClick={() => handleOpenPopup("send")}
                 >
-                    <img src="./icons/send-icon.svg" alt="Send icon" />
+                    <img src="/icons/send-icon.svg" alt="Send icon" />
                     <span>Отправить задание</span>
                 </button>
                 <button
                     className="drawer-confirm-button"
                     onClick={() => handleOpenPopup("download")}
                 >
-                    <img src="./icons/download-blue.svg" alt="Download icon" />
+                    <img src="/icons/download-blue.svg" alt="Download icon" />
                     <span>Получить материалы д/з</span>
                 </button>
             </div>

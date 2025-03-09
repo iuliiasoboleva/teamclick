@@ -13,7 +13,7 @@ const BlockPopup = ({ isOpen, onClose, text, subtext }) => {
     return (
         <div className="block-popup-overlay" onClick={handleOverlayClick}>
             <div className="block-popup-content">
-                <img src="./block-popup-image.png" alt="Popup" className="block-popup-image" />
+                <img src="/block-popup-image.png" alt="Popup" className="block-popup-image" />
                 <p className="block-popup-text">{text} <span>{subtext}</span></p>
             </div>
         </div>

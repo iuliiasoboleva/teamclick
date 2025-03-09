@@ -22,7 +22,7 @@ const SelectContent = ({ options, defaultSelected, onSelect, title }) => {
                         onClick={() => handleSelect(option.value)}
                     >
                         {option.label}
-                        {selected === option.value && <img className="drawer-select-content-checkmark" src="./icons/selected.svg" alt="Checkmark" />}
+                        {selected === option.value && <img className="drawer-select-content-checkmark" src="/icons/selected.svg" alt="Checkmark" />}
                     </li>
                 ))}
             </ul>

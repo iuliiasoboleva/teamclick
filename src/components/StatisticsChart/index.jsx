@@ -83,7 +83,7 @@ export default function StatisticsChart({ selectedDay, setSelectedDay }) {
                 <div className="statistics-info">
                     <div className="statistics-info-block">
                         <div className="statistics-info-image">
-                            <img className="table-column-image" src="./icons/cardholder.svg" alt="Cardholder" />
+                            <img className="table-column-image" src="/icons/cardholder.svg" alt="Cardholder" />
                         </div>
                         <div className="statistics-info-text-block">
                             <p>Заработано:</p>
@@ -100,7 +100,7 @@ export default function StatisticsChart({ selectedDay, setSelectedDay }) {
                     </div>
                     <div className="statistics-info-block">
                         <div className="statistics-info-image">
-                            <img className="table-column-image" src="./icons/tokens.svg" alt="Tokens" />
+                            <img className="table-column-image" src="/icons/tokens.svg" alt="Tokens" />
                         </div>
                         <div className="statistics-info-text-block">
                             <p>Продажи:</p>
@@ -162,14 +162,14 @@ export default function StatisticsChart({ selectedDay, setSelectedDay }) {
                     <div className={`chart-select ${isOtherSelectOpen ? "open" : ""}`} ref={otherSelectRef}>
                         <div className="chart-select-header" onClick={() => setIsOfferDrawerOpen(true)}>
                             <span>{offersOptions.find(p => p.value === selectedOffer)?.label.slice(0, 4)}</span>
-                            <img src={"./icons/select-down.svg"} alt="Select arrow" />
+                            <img src={"/icons/select-down.svg"} alt="Select arrow" />
                         </div>
                     </div>
 
                     <div className={`chart-select ${isPeriodSelectOpen ? "open" : ""}`} ref={periodSelectRef}>
                         <div className="chart-select-header" onClick={() => setIsPeriodDrawerOpen(true)}>
                             <span>{periodOptions.find(p => p.value === selectedPeriod)?.label.slice(0, 4)}</span>
-                            <img src={"./icons/select-down.svg"} alt="Select arrow" />
+                            <img src={"/icons/select-down.svg"} alt="Select arrow" />
                         </div>
                     </div>
                 </div>

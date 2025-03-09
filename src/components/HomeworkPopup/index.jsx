@@ -39,7 +39,7 @@ const HomeworkPopup = ({ isOpen, onClose, type }) => {
                 </p>
                 <div className="homework-popup-buttons">
                     <button className="link-card-more-button" onClick={handleLinkClick}>
-                        <img src="./icons/link-info.svg" alt="Link info" />
+                        <img src="/icons/link-info.svg" alt="Link info" />
                         <span>Перейти в Telegram</span>
                     </button>
                     <button className="homework-popup-cancel-button" onClick={onClose}>

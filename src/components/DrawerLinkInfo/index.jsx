@@ -45,7 +45,7 @@ const DrawerLinkInfo = ({ isOpen, onClose, linkData }) => {
                                 value={name}
                                 onChange={handleInputChange(setName, "name")}
                             />
-                            <img src={"./icons/edit.svg"} alt="Edit" className="input-icon" />
+                            <img src={"/icons/edit.svg"} alt="Edit" className="input-icon" />
                         </div>
                         <div className={`drawer-link-info-input-container ${errors.platform ? "error" : ""}`}>
                             <input
@@ -54,7 +54,7 @@ const DrawerLinkInfo = ({ isOpen, onClose, linkData }) => {
                                 value={platform}
                                 onChange={handleInputChange(setPlatform, "platform")}
                             />
-                            <img src={"./icons/edit.svg"} alt="Edit" className="input-icon" />
+                            <img src={"/icons/edit.svg"} alt="Edit" className="input-icon" />
                         </div>
                         <div className={`drawer-link-info-input-container ${errors.customTitle ? "error" : ""}`}>
                             <input
@@ -63,19 +63,19 @@ const DrawerLinkInfo = ({ isOpen, onClose, linkData }) => {
                                 value={customTitle}
                                 onChange={handleInputChange(setCustomTitle, "customTitle")}
                             />
-                            <img src={"./icons/edit.svg"} alt="Edit" className="input-icon" />
+                            <img src={"/icons/edit.svg"} alt="Edit" className="input-icon" />
                         </div>
                         <div className="link-container">
-                            <img src="./icons/link-gray.svg" alt="Link icon" />
+                            <img src="/icons/link-gray.svg" alt="Link icon" />
                             <span>{linkData?.link}</span>
                         </div>
                         <div className="link-info-buttons">
                             <button className="link-card-more-button" onClick={handleSave}>
-                                <img src="./icons/checkmark.svg" alt="Checkmark" />
+                                <img src="/icons/checkmark.svg" alt="Checkmark" />
                                 <span>Сохранить изменения</span>
                             </button>
                             <button className="delete-button" onClick={() => { }}>
-                                <img src="./icons/delete.svg" alt="Delete icon" />
+                                <img src="/icons/delete.svg" alt="Delete icon" />
                                 <span>Архивировать ссылку</span>
                             </button>
                         </div>
@@ -85,7 +85,7 @@ const DrawerLinkInfo = ({ isOpen, onClose, linkData }) => {
             {isSuccessPopupOpen && (
                 <div className="popup-overlay" onClick={() => setIsSuccessPopupOpen(false)}>
                     <div className="success-popup">
-                        <img src="./thumbs-up.png" alt="Thumbs up" />
+                        <img src="/thumbs-up.png" alt="Thumbs up" />
                         <p>Настройки ссылки успешно обновлены</p>
                     </div>
                 </div>

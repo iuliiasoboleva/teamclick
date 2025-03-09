@@ -6,7 +6,7 @@ export const mockModules = [
         price: 20000,
         tokens: 856,
         isActive: true,
-        background: "./module-background.png",
+        background: "/module-background.png",
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const mockModules = [
         price: 18000,
         tokens: 700,
         isActive: false,
-        background: "./module-background.png",
+        background: "/module-background.png",
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ export const mockModules = [
         price: 18000,
         tokens: 700,
         isActive: false,
-        background: "./module-background.png",
+        background: "/module-background.png",
     },
 ];
 
@@ -37,7 +37,7 @@ export const mockLessons = [
         tokens: 200,
         isActive: true,
         isPractical: false,
-        background: "./lesson-background.png",
+        background: "/lesson-background.png",
         videoUrl: "/video-example.mp4",
         homework: {
             title: "Домашнее задание к выполнению:",
@@ -93,7 +93,7 @@ export const mockLessons = [
         tokens: 180,
         isActive: true,
         isPractical: true,
-        background: "./lesson-background-2.png",
+        background: "/lesson-background-2.png",
         videoUrl: "/video-example.mp4",
     },
     {
@@ -104,7 +104,7 @@ export const mockLessons = [
         tokens: 250,
         isActive: false,
         isPractical: false,
-        background: "./lesson-background.png",
+        background: "/lesson-background.png",
         videoUrl: "/video-example.mp4",
     }
 ];

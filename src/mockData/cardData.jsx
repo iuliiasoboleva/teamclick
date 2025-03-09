@@ -2,8 +2,8 @@ export const mockCards = [
     {
         title: "Фитнес",
         name: "Фитнес курс",
-        icon: "./icons/heart.svg",
-        backgroundImage: "./fitness-bg.png",
+        icon: "/icons/heart.svg",
+        backgroundImage: "/fitness-bg.png",
         price: 490,
         stats: {
             rate: 80,
@@ -20,8 +20,8 @@ export const mockCards = [
     },
     {
         title: "Йога",
-        icon: "./icons/heart.svg",
-        backgroundImage: "./fitness-bg.png",
+        icon: "/icons/heart.svg",
+        backgroundImage: "/fitness-bg.png",
         price: 650,
         stats: {
             rate: 75,

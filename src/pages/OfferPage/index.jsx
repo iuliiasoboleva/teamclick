@@ -86,7 +86,7 @@ const OfferPage = ({ offer, onBack }) => {
                     </label>
 
                     <button className="confirm-button" onClick={handleConfirmClick}>
-                        <img src="./icons/link.svg" alt="Create link" />
+                        <img src="/icons/link.svg" alt="Create link" />
                         <span>Создать ссылку</span>
                     </button>
                 </>

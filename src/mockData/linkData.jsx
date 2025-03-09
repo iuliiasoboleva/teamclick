@@ -1,7 +1,7 @@
 export const mockLinks = [
     {
         title: "Фитнес",
-        icon: "./icons/heart.svg",
+        icon: "/icons/heart.svg",
         labelName: "Название тега",
         stats: {
             clicks: 829,
@@ -16,7 +16,7 @@ export const mockLinks = [
     },
     {
         title: "Профессия",
-        icon: "./icons/profession.svg",
+        icon: "/icons/profession.svg",
         labelName: "Название тега",
         stats: {
             clicks: 0,
@@ -31,7 +31,7 @@ export const mockLinks = [
     },
     {
         title: "Фитнес",
-        icon: "./icons/heart.svg",
+        icon: "/icons/heart.svg",
         labelName: "Название тега",
         stats: {
             clicks: 829,
@@ -46,7 +46,7 @@ export const mockLinks = [
     },
     {
         title: "Профессия",
-        icon: "./icons/profession.svg",
+        icon: "/icons/profession.svg",
         labelName: "Название тега",
         stats: {
             clicks: 0,

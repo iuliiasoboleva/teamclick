@@ -17,13 +17,13 @@ const UserHeader = ({ user }) => {
                     </div>
                 </div>
                 <div className="home-header-label">
-                    <img src="./icons/crown.svg" alt="Grade" />
+                    <img src="/icons/crown.svg" alt="Grade" />
                     <p>Ранг {user.rank}</p>
                 </div>
             </div>
             <div className="home-header-table-info">
                 <div className="table-column">
-                    <img className="table-column-image" src="./icons/cardholder.svg" alt="Cardholder" />
+                    <img className="table-column-image" src="/icons/cardholder.svg" alt="Cardholder" />
                     <div>
                         <p className="table-label">Баланс</p>
                         <p className="table-value">{formatNumber(user.balance)} ₽</p>
@@ -31,7 +31,7 @@ const UserHeader = ({ user }) => {
                 </div>
                 <div className="table-divider"></div>
                 <div className="table-column">
-                    <img className="table-column-image" src="./icons/tokens.svg" alt="Tokens" />
+                    <img className="table-column-image" src="/icons/tokens.svg" alt="Tokens" />
                     <div>
                         <p className="table-label">Токены</p>
                         <p className="table-value">{formatNumber(user.tokens)}</p>

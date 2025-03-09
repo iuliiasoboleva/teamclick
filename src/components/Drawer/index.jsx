@@ -10,10 +10,10 @@ const Drawer = ({ isOpen, onClose, onLinkCreated }) => {
     const selectRef = useRef(null);
 
     const trafficSources = [
-        { value: "telegram", label: "Telegram", icon: "./icons/telegram.svg" },
-        { value: "instagram", label: "Instagram", icon: "./icons/instagram.svg" },
-        { value: "youtube", label: "YouTube", icon: "./icons/youtube.svg" },
-        { value: "tiktok", label: "TikTok", icon: "./icons/tiktok.svg" },
+        { value: "telegram", label: "Telegram", icon: "/icons/telegram.svg" },
+        { value: "instagram", label: "Instagram", icon: "/icons/instagram.svg" },
+        { value: "youtube", label: "YouTube", icon: "/icons/youtube.svg" },
+        { value: "tiktok", label: "TikTok", icon: "/icons/tiktok.svg" },
     ];
 
     const handleConfirmClick = () => {
@@ -62,7 +62,7 @@ const Drawer = ({ isOpen, onClose, onLinkCreated }) => {
             <div className={`drawer ${isOpen ? "open" : ""}`} onClick={(e) => e.stopPropagation()}>
                 <div className="drawer-content">
                     <div className="drawer-line"></div>
-                    <img className="green-flag" src="./green-flag.png" alt="Green flag" />
+                    <img className="green-flag" src="/green-flag.png" alt="Green flag" />
                     <p className="drawer-text">
                         Мы на финишной прямой, осталось внести немного информации,<span> чтобы ты не запутался когда пойдут продажи</span>
                     </p>
@@ -71,7 +71,7 @@ const Drawer = ({ isOpen, onClose, onLinkCreated }) => {
                         <div className="custom-select-header" onClick={() => setIsSelectOpen(!isSelectOpen)}>
                             <div>
                                 <img
-                                    src={selectedTrafficSource ? selectedTrafficSource.icon : "./icons/source.svg"}
+                                    src={selectedTrafficSource ? selectedTrafficSource.icon : "/icons/source.svg"}
                                     alt="Traffic source"
                                     className={`input-icon ${errors.select ? "error-icon" : ""}`}
                                 />
@@ -80,7 +80,7 @@ const Drawer = ({ isOpen, onClose, onLinkCreated }) => {
                                 </span>
                             </div>
                             <img
-                                src={isSelectOpen ? "./icons/select-up.svg" : "./icons/select-down.svg"}
+                                src={isSelectOpen ? "/icons/select-up.svg" : "/icons/select-down.svg"}
                                 alt="Select arrow"
                                 className={errors.select ? "error-icon" : ""}
                             />
@@ -100,7 +100,7 @@ const Drawer = ({ isOpen, onClose, onLinkCreated }) => {
 
                     <div className={`drawer-input-container ${errors.input ? "error" : ""}`}>
                         <img
-                            src={errors.input ? "./icons/pencil-error.svg" : "./icons/pencil.svg"}
+                            src={errors.input ? "/icons/pencil-error.svg" : "/icons/pencil.svg"}
                             alt="Edit"
                             className="input-icon"
                         />
@@ -113,7 +113,7 @@ const Drawer = ({ isOpen, onClose, onLinkCreated }) => {
                     </div>
 
                     <button className="drawer-confirm-button" onClick={handleConfirmClick}>
-                        <img src="./icons/link.svg" alt="Create link" />
+                        <img src="/icons/link.svg" alt="Create link" />
                         <span>Создать ссылку</span>
                     </button>
                 </div>

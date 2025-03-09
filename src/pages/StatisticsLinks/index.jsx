@@ -26,7 +26,7 @@ const StatisticsLinks = () => {
             <div className="statistics-links-content">
                 <h2 className="statistics-tab-title">Мои ссылки</h2>
                 <div className="statistics-subtitle" onClick={() => setIsSortDrawerOpen(true)}>
-                    <img src="./icons/sort.svg" alt="Sort" />
+                    <img src="/icons/sort.svg" alt="Sort" />
                     <p className="statistics-subtitle-text">Сортировать</p>
                 </div>
             </div>

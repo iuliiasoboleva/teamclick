@@ -35,7 +35,7 @@ const LinkCard = ({ title, icon, labelName, income, stats, onMoreClick, history,
 
             {onMoreClick && (
                 <button className="link-card-more-button" onClick={onMoreClick}>
-                    <img src="./icons/link-info.svg" alt="Link info" />
+                    <img src="/icons/link-info.svg" alt="Link info" />
                     <span>Информация о ссылке</span>
                 </button>
             )}

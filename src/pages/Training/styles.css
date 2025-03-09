@@ -27,7 +27,7 @@
     gap: 10px;
     padding: 25px;
     background-color: #fff;
-    background-size: contain;
+    background-size: auto;
     background-position: right bottom;
     background-repeat: no-repeat;
     display: flex;
