@@ -17,7 +17,10 @@ const BottomMenu = ({ items }) => {
     return (
         <div className="bottom-menu">
             {items.map((item) => {
-                const isActive = location.pathname === item.path;
+                const isActive =
+                    item.path === "/"
+                        ? location.pathname === item.path
+                        : location.pathname.startsWith(item.path);
 
                 return (
                     <div

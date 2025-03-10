@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { mockModules, mockLessons } from "../../mockData/moduleData";
 import HomeworkComponent from "../HomeworkComponent";
 import UserHeader from "../UserHeader";
@@ -8,8 +8,10 @@ import "./styles.css";
 
 const LessonComponent = ({ onBack }) => {
     const location = useLocation();
+    const navigate = useNavigate();
     const { moduleId, lessonId } = useParams();
     const videoRef = useRef(null);
+
     const [isPlaying, setIsPlaying] = useState(false);
     const [showHomework, setShowHomework] = useState(false);
 
@@ -20,17 +22,35 @@ const LessonComponent = ({ onBack }) => {
         if (!module && moduleId) {
             const foundModule = mockModules.find((item) => item.id === parseInt(moduleId));
             if (foundModule) {
+                if (!foundModule.isActive) {
+                    console.warn(`Модуль с id ${moduleId} неактивен — редирект на список модулей`);
+                    navigate("/training");
+                    return;
+                }
                 setModule(foundModule);
+            } else {
+                console.warn(`Модуль с id ${moduleId} не найден — редирект на список модулей`);
+                navigate("/training");
+                return;
             }
         }
 
         if (!lesson && lessonId) {
             const foundLesson = mockLessons.find((item) => item.id === parseInt(lessonId));
             if (foundLesson) {
+                if (!foundLesson.isActive) {
+                    console.warn(`Урок с id ${lessonId} неактивен — редирект на модуль`);
+                    navigate(`/training/module/${moduleId}`);
+                    return;
+                }
                 setLesson(foundLesson);
+            } else {
+                console.warn(`Урок с id ${lessonId} не найден — редирект на модуль`);
+                navigate(`/training/module/${moduleId}`);
+                return;
             }
         }
-    }, [moduleId, lessonId, module, lesson]);
+    }, [moduleId, lessonId, module, lesson, navigate]);
 
     const handlePlay = () => {
         if (videoRef.current) {

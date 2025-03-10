@@ -1,0 +1,39 @@
+.success-label {
+    gap: 5px;
+    padding: 6px 10px;
+    background: #EAFFF2;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: capitalize;
+    color: #31C770;
+    border-radius: 57px;
+}
+
+.cancel-label {
+    gap: 5px;
+    padding: 6px 10px;
+    background: #FFECEC;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: capitalize;
+    color: #FE4840;
+    border-radius: 57px;}
+
+.process-label {
+    gap: 5px;
+    padding: 6px 10px;
+    background: #FFF5E1;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: capitalize;
+    color: #FBA504;
+    border-radius: 57px;}
+
+.payment-card-title-block {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}

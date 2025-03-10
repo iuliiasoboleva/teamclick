@@ -12,28 +12,26 @@ const Training = () => {
     const { moduleId, lessonId } = useParams();
     const [popupOpen, setPopupOpen] = useState(false);
     const [selectedModule, setSelectedModule] = useState(null);
-    const [selectedLesson, setSelectedLesson] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         if (moduleId) {
             const module = mockModules.find((item) => item.id === parseInt(moduleId));
             if (module) {
+                if (!module.isActive) {
+                    console.warn(`Модуль с id ${moduleId} неактивен — редирект на список модулей`);
+                    navigate("/training");
+                    return;
+                }
                 setSelectedModule(module);
+            } else {
+                console.warn(`Модуль с id ${moduleId} не найден — редирект на список модулей`);
+                navigate("/training");
             }
         } else {
             setSelectedModule(null);
         }
-
-        if (lessonId && moduleId) {
-            const lesson = mockLessons.find((item) => item.id === parseInt(lessonId));
-            if (lesson) {
-                setSelectedLesson(lesson);
-            }
-        } else {
-            setSelectedLesson(null);
-        }
-    }, [moduleId, lessonId]);
+    }, [moduleId, lessonId, navigate]);
 
     const handleCardClick = (item) => {
         if (!item.isActive) {
@@ -55,9 +53,7 @@ const Training = () => {
     };
 
     const handleGoBack = () => {
-        if (selectedLesson) {
-            navigate(`/training/module/${selectedModule?.id}`);
-        } else if (selectedModule) {
+        if (selectedModule) {
             navigate(`/training`);
         } else {
             navigate(-1);

@@ -1,0 +1,173 @@
+.withdraw-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.withdraw-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    max-width: 225px;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    display: flex;
+    gap: 5px;
+    margin: 10px auto 20px;
+    max-width: 280px;
+    width: 100%;
+}
+
+.progress-step {
+    flex: 1;
+    height: 4px;
+    background-color: #CBD5E1;
+    border-radius: 55px;
+    transition: background-color 0.3s ease;
+}
+
+.progress-step.active {
+    background-color: #31C770;
+}
+
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-method {
+    border: 1px solid #EAEAEA;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-method.selected {
+    background-color: #ffffff;
+}
+
+.card-input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.card-input {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #EAEAEA;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 100%;
+    background-color: transparent;
+    font-family: Inter Tight;
+}
+
+.card-input.input-error {
+    border: 1px solid #FF615A;
+    background: #FFEDEC;
+    color: #FF615A;
+}
+
+.card-type-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    object-fit: none;
+}
+
+.payment-popup-content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: 25px;
+    padding: 42px;
+    max-width: 346px;
+    gap: 8px;
+}
+
+.payment-popup-content p {
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.withdraw-back-button {
+    gap: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 100%;
+    padding: 15px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: 1px solid #4187FF;
+    color: #4187FF;
+}
+
+.withdraw-back-button.disabled {
+    color: #BDBDBD;
+    border: 1px solid #BDBDBD;
+}
+
+.saved-card-text {
+    font-size: 14px;
+    line-height: 100%;
+    color: #737373;
+    font-weight: 400;
+}
+
+.saved-card-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.commission-text {
+    font-size: 12px;
+    line-height: 100%;
+    color: #252728;
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+.congratulations-text {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.congratulations-text h2 {
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.congratulations-text p {
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    font-weight: 400;
+    margin: 0 auto;
+    max-width: 260px;
+}

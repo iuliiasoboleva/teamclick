@@ -1,0 +1,102 @@
+.settings-main-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.settings-items {
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+    margin-top: 26px;
+}
+
+.settings-item {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.settings-item.tip-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings-item-image {
+    border-radius: 6.8px;
+    background: #F7F7F7;
+    border: 0.85px solid #EAEAEA;
+    padding: 10px;
+}
+
+.settings-item-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #252728;
+}
+
+.toggle-switch {
+    width: 39px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-switch.active {
+    background-color: #1A5BBF;
+    background-image: linear-gradient(
+        180deg, 
+        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(255, 255, 255, 0) 80%
+    );
+
+    box-shadow: 
+        inset 0px 0.65px 3.27px rgba(0, 0, 0, 0.25),
+        0px 0.26px 0.33px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-thumb {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch.active .toggle-thumb {
+    transform: translateX(18px);
+}
+
+.settings-tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 8px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.settings-item:hover .settings-tooltip,
+.settings-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}

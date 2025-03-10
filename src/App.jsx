@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Statistics from "./pages/Statistics";
 import Training from "./pages/Training";
 import LessonPage from "./pages/LessonPage";
+import Settings from "./pages/Settings";
+import WithdrawPage from "./pages/WithdrawPage";
 
 import BottomMenu from "./components/BottomMenu";
 import { store } from "./store/store";
@@ -37,6 +39,8 @@ const AppContent = () => {
         <Route path="/training" element={<Training />} />
         <Route path="/training/module/:moduleId" element={<Training />} />
         <Route path="/training/module/:moduleId/lesson/:lessonId" element={<LessonPage />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings/withdraw" element={<WithdrawPage />} />
       </Routes>
       {menuItems.length > 0 && <BottomMenu items={menuItems} />}
     </div>
