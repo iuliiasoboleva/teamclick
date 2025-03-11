@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SuccessPage from "../../components/SuccessPage";
 import StatisticsLinks from "../StatisticsLinks";
 import LinkCard from "../../components/LinkCard";
 import { mockLinks } from "../../mockData/linkData";

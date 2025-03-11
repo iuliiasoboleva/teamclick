@@ -114,9 +114,9 @@ const LessonComponent = ({ onBack }) => {
                                 </video>
 
                                 {!isPlaying && (
-                                    <button className="custom-play-button" onClick={handlePlay}>
-                                        ▶
-                                    </button>
+                                    <div className="custom-play-button" onClick={handlePlay}>
+                                        <img src="/icons/play.svg" alt="Play icon" />
+                                    </div>
                                 )}
                             </div>
                         )}

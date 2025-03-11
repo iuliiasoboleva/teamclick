@@ -37,7 +37,7 @@
   
 .drawer.open {
     transform: translateY(0);
-    padding-bottom: 80px;
+    padding-bottom: 180px;
 }
 
 .drawer-close {

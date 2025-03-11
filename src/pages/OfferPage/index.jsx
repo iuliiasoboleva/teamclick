@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { formatNumber } from "../../helpers";
 import Drawer from "../../components/Drawer";
 import SuccessPage from "../../components/SuccessPage";
 import "./styles.css";
 
-const OfferPage = ({ offer, onBack }) => {
+const OfferPage = ({ offer }) => {
     const statLabels = {
         rate: "Ставка",
         leadCost: "Стоимость за лид",
@@ -14,19 +14,6 @@ const OfferPage = ({ offer, onBack }) => {
     const [isChecked, setIsChecked] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [isLinkCreated, setIsLinkCreated] = useState(false);
-
-    useEffect(() => {
-        if (window.Telegram?.WebApp?.BackButton) {
-            const backButton = window.Telegram.WebApp.BackButton;
-            backButton.show();
-            backButton.onClick(onBack);
-
-            return () => {
-                backButton.hide();
-                backButton.offClick(onBack);
-            };
-        }
-    }, [onBack]);
 
     const handleConfirmClick = () => {
         setIsDrawerOpen(true);

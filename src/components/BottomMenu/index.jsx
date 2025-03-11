@@ -2,13 +2,13 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./styles.css";
 
-const BottomMenu = ({ items }) => {
+const BottomMenu = ({ items, onReset }) => {
     const location = useLocation();
     const navigate = useNavigate();
 
     const handleClick = (path) => {
         if (location.pathname === path) {
-            navigate(0);
+            onReset?.();
         } else {
             navigate(path);
         }

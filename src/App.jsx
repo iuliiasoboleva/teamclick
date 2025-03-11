@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
@@ -22,6 +22,13 @@ const AppContent = () => {
     { id: 4, icon: "/icons/settings.svg", activeIcon: "/icons/settings-active.svg", alt: "Settings", label: "Настройки", path: "/settings" },
   ];
 
+  const [key, setKey] = useState(0);
+
+  const resetState = () => {
+    console.log("Resetting state...");
+    setKey(prev => prev + 1);
+  };
+
   useEffect(() => {
     if (window.Telegram && window.Telegram.WebApp) {
       const WebApp = window.Telegram.WebApp;
@@ -34,15 +41,15 @@ const AppContent = () => {
   return (
     <div className="app-container">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/statistics" element={<Statistics />} />
-        <Route path="/training" element={<Training />} />
-        <Route path="/training/module/:moduleId" element={<Training />} />
-        <Route path="/training/module/:moduleId/lesson/:lessonId" element={<LessonPage />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/settings/withdraw" element={<WithdrawPage />} />
+        <Route path="/" element={<Home key={key} />} />
+        <Route path="/statistics" element={<Statistics key={key} />} />
+        <Route path="/training" element={<Training key={key} />} />
+        <Route path="/training/module/:moduleId" element={<Training key={key} />} />
+        <Route path="/training/module/:moduleId/lesson/:lessonId" element={<LessonPage key={key} />} />
+        <Route path="/settings" element={<Settings key={key} />} />
+        <Route path="/settings/withdraw" element={<WithdrawPage key={key} />} />
       </Routes>
-      {menuItems.length > 0 && <BottomMenu items={menuItems} />}
+      {menuItems.length > 0 && <BottomMenu items={menuItems} onReset={resetState} />}
     </div>
   );
 };
