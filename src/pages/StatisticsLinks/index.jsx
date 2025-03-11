@@ -20,6 +20,26 @@ const StatisticsLinks = () => {
         { value: "name", label: "По названию" },
     ];
 
+    const getSortedLinks = () => {
+        return [...mockLinks].sort((a, b) => {
+            switch (selectedSort) {
+                case "income":
+                    return a.income - b.income;
+                case "clicks":
+                    return b.stats.clicks - a.stats.clicks;
+                case "date": {
+                    const dateA = new Date(a.createdAt.split('.').reverse().join('-'));
+                    const dateB = new Date(b.createdAt.split('.').reverse().join('-'));
+                    return dateB - dateA;
+                }
+                case "name":
+                    return a.title.localeCompare(b.title);
+                default:
+                    return 0;
+            }
+        });
+    };
+
     return (
         <>
             <StatisticsChart selectedDay={selectedDay} setSelectedDay={setSelectedDay} />
@@ -31,7 +51,7 @@ const StatisticsLinks = () => {
                 </div>
             </div>
 
-            {mockLinks.map((card, index) => (
+            {getSortedLinks().map((card, index) => (
                 <LinkCard
                     key={index}
                     {...card}
